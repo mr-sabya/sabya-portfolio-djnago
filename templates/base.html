@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ambrox - Personal Portfolio Template">
+
+    <!-- ========== Page Title ========== -->
+    <title>Ambrox - Personal Portfolio Template</title>
+
+    <!-- ========== Favicon Icon ========== -->
+    <link rel="shortcut icon" href="{% static 'assets/img/sabya-logo.png' %}" type="image/x-icon">
+
+    <!-- ========== Start Stylesheet ========== -->
+    <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/themify-icons.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/elegant-icons.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/flaticon-set.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/magnific-popup.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/swiper-bundle.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/animate.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/validnavs.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/helper.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/unit-test.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" type="text/css">
+    <!-- ========== End Stylesheet ========== -->
+
+
+
+</head>
+
+<body class="bg-fixed bg-image">
+
+    <!-- Start Preloader 
+    ============================================= -->
+    <div id="preloader">
+        <div id="ambrox-preloader" class="ambrox-preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+                <div class="txt-loading">
+                    <span data-text-preloader="S" class="letters-loading">
+                        S
+                    </span>
+                    <span data-text-preloader="A" class="letters-loading">
+                        A
+                    </span>
+                    <span data-text-preloader="B" class="letters-loading">
+                        B
+                    </span>
+                    <span data-text-preloader="Y" class="letters-loading">
+                        Y
+                    </span>
+                    <span data-text-preloader="A" class="letters-loading">
+                        A
+                    </span>
+
+                </div>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- Header 
+    ============================================= -->
+    <header id="home">
+        <!-- Start Navigation -->
+        <nav
+            class="navbar mobile-sidenav onepage-menu mobile-nav-only attr-border navbar-sticky navbar-default validnavs navbar-fixed dark no-background">
+
+
+            <div class="container d-flex justify-content-between align-items-center">
+
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index-2.html">
+                        <img src="assets/img/logo.png" class="logo" alt="Logo">
+                    </a>
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+
+                    <img src="assets/img/logo.png" alt="Logo">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-times"></i>
+                    </button>
+
+                    <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li>
+                            <a class="smooth-menu" href="#home">Home</a>
+                        </li>
+                        <li>
+                            <a class="smooth-menu" href="#expertise">expertise</a>
+                        </li>
+                        <li>
+                            <a class="smooth-menu" href="#portfolio">portfolio</a>
+                        </li>
+                        <li>
+                            <a class="smooth-menu" href="#about">about</a>
+                        </li>
+                        <li>
+                            <a class="smooth-menu" href="#blog">blog</a>
+                        </li>
+                        <li>
+                            <a class="smooth-menu" href="#contact">contact</a>
+                        </li>
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+
+                <!-- Main Nav -->
+            </div>
+            <!-- Overlay screen for menu -->
+            <div class="overlay-screen"></div>
+            <!-- End Overlay screen for menu -->
+        </nav>
+        <!-- End Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Header Fixed 
+    ============================================= -->
+    <header class="header-fixed">
+        <div class="f-flex">
+            <div class="logo">
+                <a href="#"><img src="{% static 'assets/img/sabya-logo.png' %}" alt="Logo"></a>
+            </div>
+            <div class="menu">
+                <ul class="nav">
+                    <li>
+                        <a class="smooth-menu" href="{% url 'index' %}">
+                            <i class="fas fa-home"></i>
+                            <div class="menu-name">Home</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="smooth-menu" href="{% url 'service' %}">
+                            <i class="fas fa-cog"></i>
+                            <div class="menu-name">Services</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="smooth-menu" href="{% url 'portfolio' %}">
+                            <i class="fas fa-briefcase"></i>
+                            <div class="menu-name">Portfolio</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="smooth-menu" href="{% url 'about' %}">
+                            <i class="fas fa-user"></i>
+                            <div class="menu-name">About</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="smooth-menu" href="{% url 'pricing' %}">
+                            <i class="fas fa-hand-holding-usd"></i>
+                            <div class="menu-name">Pricing</div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="smooth-menu" href="{% url 'contact' %}">
+                            <i class="fas fa-comments"></i>
+                            <div class="menu-name">Contact</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="video">
+                <a href="https://www.youtube.com/watch?v=5qRsGTuy3Rs" class="popup-youtube video-play-button theme">
+                    <i class="fas fa-play"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-- End Header Fixed -->
+
+
+    {% block content %}
+    {% endblock %}
+
+    <!-- Start Footer 
+    ============================================= -->
+    <footer class="bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <ul class="footer-social">
+                        <li class="facebook">
+                            <a href="#">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </li>
+                        <li class="behance">
+                            <a href="#">
+                                <i class="fab fa-behance"></i>
+                            </a>
+                        </li>
+                        <li class="dribbble">
+                            <a href="#">
+                                <i class="fab fa-dribbble"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-end">
+                    <p>&copy; 2023 Ambrox. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End Footer -->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+    <script src="{% static 'assets/js/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.appear.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/modernizr.custom.13711.js' %}"></script>
+    <script src="{% static 'assets/js/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/progress-bar.min.js' %}"></script>
+    <script src="{% static 'assets/js/circle-progress.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'assets/js/count-to.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.scrolla.min.js' %}"></script>
+    <script src="{% static 'assets/js/YTPlayer.min.js' %}"></script>
+    <script src="{% static 'assets/js/TweenMax.min.js' %}"></script>
+    <script src="{% static 'assets/js/typed.js' %}"></script>
+    <script src="{% static 'assets/js/validnavs.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+
+</html>
