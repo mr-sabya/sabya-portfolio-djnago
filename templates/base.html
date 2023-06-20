@@ -27,6 +27,9 @@
     <link href="{% static 'assets/css/validnavs.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'assets/css/helper.css' %}" rel="stylesheet" type="text/css">
     <link href="{% static 'assets/css/unit-test.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'assets/lightbox/css/lightbox.css' %}" rel="stylesheet" type="text/css">
+
+
     <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" type="text/css">
     <!-- ========== End Stylesheet ========== -->
 
@@ -97,7 +100,7 @@
                         <i class="fa fa-bars"></i>
                     </button>
                     <a class="navbar-brand" href="index-2.html">
-                        <img src="assets/img/logo.png" class="logo" alt="Logo">
+                        <img src="{% static 'assets/img/logo.png' %}" class="logo" alt="Logo">
                     </a>
                 </div>
                 <!-- End Header Navigation -->
@@ -105,29 +108,41 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
 
-                    <img src="assets/img/logo.png" alt="Logo">
+                    <img src="{% static 'assets/img/logo.png' %}" alt="Logo">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-times"></i>
                     </button>
 
                     <ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
                         <li>
-                            <a class="smooth-menu" href="#home">Home</a>
+                            <a class="smooth-menu" href="{% url 'index' %}">
+                                <div class="menu-name">Home</div>
+                            </a>
                         </li>
                         <li>
-                            <a class="smooth-menu" href="#expertise">expertise</a>
+                            <a class="smooth-menu" href="{% url 'service' %}">
+                                <div class="menu-name">Services</div>
+                            </a>
                         </li>
                         <li>
-                            <a class="smooth-menu" href="#portfolio">portfolio</a>
+                            <a class="smooth-menu" href="{% url 'portfolio' %}">
+                                <div class="menu-name">Portfolio</div>
+                            </a>
                         </li>
                         <li>
-                            <a class="smooth-menu" href="#about">about</a>
+                            <a class="smooth-menu" href="{% url 'about' %}">
+                                <div class="menu-name">About</div>
+                            </a>
                         </li>
                         <li>
-                            <a class="smooth-menu" href="#blog">blog</a>
+                            <a class="smooth-menu" href="{% url 'pricing' %}">
+                                <div class="menu-name">Pricing</div>
+                            </a>
                         </li>
                         <li>
-                            <a class="smooth-menu" href="#contact">contact</a>
+                            <a class="smooth-menu" href="{% url 'contact' %}">
+                                <div class="menu-name">Contact</div>
+                            </a>
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
@@ -255,6 +270,10 @@
     <script src="{% static 'assets/js/TweenMax.min.js' %}"></script>
     <script src="{% static 'assets/js/typed.js' %}"></script>
     <script src="{% static 'assets/js/validnavs.js' %}"></script>
+
+    <script src="{% static 'assets/lightbox/js/lightbox.js' %}"></script>
+
+
     <script src="{% static 'assets/js/main.js' %}"></script>
 
 </body>

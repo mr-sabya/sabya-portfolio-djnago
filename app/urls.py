@@ -8,7 +8,10 @@ from .views import home, service, portfolio, about, pricing, contact
 urlpatterns = [
     path('', home.index, name="index"),
     path('services', service.index, name="service"),
+
     path('portfolio', portfolio.index, name="portfolio"),
+    path('portfolio/<str:slug>', portfolio.show, name="portfolio.show"),
+
     path('about', about.index, name="about"),
     path('pricing', pricing.index, name="pricing"),
     path('contact', contact.index, name="contact"),

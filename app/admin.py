@@ -1,19 +1,22 @@
 from django.contrib import admin
 
 
-from .models import Category, Client, Language, Project, Type, Project_Feature
+from .models import Category, Client, Language, Project, Type, Project_Feature, Project_image
 # Register your models here.
 
 class CategoryAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
 
-class Project_Feature(admin.StackedInline):
+class Project_Feature(admin.TabularInline):
     model = Project_Feature
+
+class Project_image(admin.TabularInline):
+    model = Project_image
 
 
 class ProjectAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
-    inlines = [Project_Feature]
+    inlines = (Project_Feature, Project_image)
 
 
 admin.site.register(Category, CategoryAdmin)

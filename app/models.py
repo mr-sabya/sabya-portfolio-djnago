@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 
@@ -26,7 +27,7 @@ class Client(models.Model):
     company = models.CharField(max_length=150, null=True, blank=True)
     position = models.CharField(max_length=255)
     image = models.ImageField(upload_to='client/')
-    details = models.TextField(null=True, blank=True)
+    details = RichTextField(null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -36,6 +37,9 @@ class Client(models.Model):
 class Language(models.Model):
     name = models.CharField(max_length=100)
     logo = models.ImageField(upload_to='language/', null=True, blank=True)
+
+    def __str__(self):
+        return self.name
     
 
 
@@ -43,12 +47,13 @@ class Project(models.Model):
     title = models.CharField(max_length=255)
     slug = models.SlugField(max_length=255, unique=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    link = models.CharField(max_length=255, null=True, blank=True)
     type = models.ForeignKey(Type, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='project/')
     cover = models.ImageField(upload_to='project/')
     client = models.ForeignKey(Client, on_delete=models.Case)
     date = models.DateField()
-    details = models.TextField()
+    details = RichTextField()
     language = models.ManyToManyField(Language)
 
     def __str__(self):
@@ -58,3 +63,9 @@ class Project(models.Model):
 class Project_Feature(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     feature = models.CharField(max_length=255)
+
+
+class Project_image(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE)
+    title = models.CharField(max_length=255, null=True, blank=True)
+    image = models.ImageField(upload_to='project/', null=True, blank=True)

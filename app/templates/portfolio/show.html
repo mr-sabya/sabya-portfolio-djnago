@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Start Portfolio 
+    ============================================= -->
+<div id="portfolio" class="portfolio-style-six-area default-padding">
+    <div class="shape-animated-right">
+        <img src="{% static 'assets/img/shape/1.webp' %}" alt="Shape">
+    </div>
+
+    <div class="container">
+
+
+        <a href="{% url 'portfolio' %}"><i class="fas fa-arrow-left"></i> Go Back</a>
+
+
+        <div class="project-details-items">
+            <div class="project-thumb">
+                <img src="{{ HTTP_HOST }}/media/{{ project.cover }}" alt="Thumb">
+            </div>
+            <div class="top-info">
+                <div class="row">
+                    <div class="col-xl-12 left-info">
+                        <div class="project-info mt-md-50 mt-xs-40 mb-40">
+                            <div class="content">
+                                <ul class="project-basic-info">
+                                    <li>
+                                        Client <span> <a href="#">{{ project.client.name }}</a></span>
+                                    </li>
+                                    <li>
+                                        Project Type <span>{{ project.type.title }}</span>
+                                    </li>
+                                    <li>
+                                        Date <span>{{ project.date }}</span>
+                                    </li>
+                                    <li>
+                                        Link <span>
+                                            <a href="{{ project.link }}" target="_blank">
+                                                {{ project.link }}</a>
+                                            </span>
+                                    </li>
+
+                                </ul>
+                                <ul class="social">
+                                    <li>
+                                        <h4>Share:</h4>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                        <div class="details">
+                            {{ project.details | safe }}
+                        </div>
+
+                        <div class="feature mt-40">
+                            <h3>Project features</h3>
+                            <ul>
+                                {% for feature in project.project_feature_set.all %}
+                                <li class="mt-3"><strong><span style="color: #00c0ff; margin-right: 15px;"><i
+                                                class="fas fa-share"></i></span> {{ feature.feature }}</strong></li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+
+                        <div class="image mt-40">
+                            <h3>Project Images</h3>
+                            <div class="gallery-items d-flex gap-4">
+                                {% for image in project.project_image_set.all %}
+                                <div class="pf-item p-0 round">
+                                    <div class="overlay-content">
+                                        <img src="{{ HTTP_HOST }}/media/{{ image.image }}" alt="{{ image.title }}">
+                                        <div class="content">
+                                            <div class="title m-0">
+                                                <h5>{{ image.title }}</h5>
+                                            </div>
+                                            <a href="{{ HTTP_HOST }}/media/{{ image.image }}" data-lightbox="image"
+                                                data-title="{{ image.title }}"><i class="fas fa-arrow-right"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!-- End Projects Single Modal -->
+</div>
+<!-- End Portfolio -->
+{% endblock %}

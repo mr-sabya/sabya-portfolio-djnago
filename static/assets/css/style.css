@@ -308,6 +308,11 @@ p {
 	font-family: var(--font-default);
 }
 
+.round{
+	border-radius: 8px;
+	overflow: hidden;
+}
+
 
 /* ============================================================== 
     # Helper CSS
