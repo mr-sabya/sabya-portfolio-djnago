@@ -346,16 +346,16 @@
                             <div class="row">
                                 <div class="col-lg-12">
                                     <ul class="education-table">
+                                        {% for education in educations %}
                                         <li>
-                                            <h4>AS - Science & Information</h4>
-                                            <h5>SuperKing College</h5>
-                                            <span>2001 - 2005</span>
+                                            <h4>{{ education.degree }}</h4>
+                                            <h5>{{ education.college }}</h5>
+                                            <span>{{ education.date }}</span>
                                             <p>
-                                                The training provided by universities in order to prepare people to work
-                                                in various sectors of the economy or areas of culture.
+                                                {{ education.details }}
                                             </p>
                                         </li>
-                                    
+                                        {% endfor %}
                                     </ul>
                                 </div>
                             </div>
