@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 
-from .models import Category, Client, Language, Project, Type, Project_Feature, Project_image
+from .models import Category, Client, Language, Project, Type, Project_Feature, Project_image, Service, Skill, Education
 # Register your models here.
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -24,3 +24,6 @@ admin.site.register(Client)
 admin.site.register(Type)
 admin.site.register(Language)
 admin.site.register(Project, ProjectAdmin)
+admin.site.register(Service)
+admin.site.register(Skill)
+admin.site.register(Education)

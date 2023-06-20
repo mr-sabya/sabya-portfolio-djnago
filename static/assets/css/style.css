@@ -4945,7 +4945,8 @@ ul.biography-table li p {
 	height: 8px;
 	border-radius: 50px;
 	background: #e5ebec;
-	margin-top: 15px;
+	/* margin-top: 15px; */
+	width: 100%;
 }
 
 .skill-table .progress .progress-bar {
@@ -4956,19 +4957,10 @@ ul.biography-table li p {
 .skill-table .progress-box {
 	align-items: center;
 	width: 100%;
+	display: flex;
+	gap: 15px;
 }
 
-.skill-table i.fa-laravel {
-	background: #fb503b;
-}
-
-.skill-table i.fa-html5 {
-	background: #e34c26;
-}
-
-.skill-table i.fa-react {
-	background: #61DBFB;
-}
 
 .education-table {
 	position: relative;

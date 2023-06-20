@@ -1,4 +1,5 @@
 from django.db import models
+from colorfield.fields import ColorField
 from ckeditor.fields import RichTextField
 
 # Create your models here.
@@ -69,3 +70,35 @@ class Project_image(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE)
     title = models.CharField(max_length=255, null=True, blank=True)
     image = models.ImageField(upload_to='project/', null=True, blank=True)
+
+
+
+
+class Service(models.Model):
+    title = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='service/')
+    details = models.TextField( max_length=255)
+
+    def __str__(self):
+        return self.title
+    
+
+
+class Skill(models.Model):
+    title = models.CharField(max_length=50)
+    icon = models.ImageField(upload_to='skill/')
+    percentage = models.IntegerField()
+
+    def __str__(self):
+        return self.title
+    
+
+
+class Education(models.Model):
+    degree = models.CharField(max_length=100)
+    college = models.CharField(max_length=150)
+    date = models.CharField(max_length=50)
+    details = models.TextField(max_length=200)
+
+    def __str__(self):
+        return self.title
