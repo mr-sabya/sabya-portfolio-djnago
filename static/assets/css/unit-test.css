@@ -51,9 +51,9 @@ button.btn:hover::after {
 }
 
 .blog-area {
-	background-size: 30%,  contain;
-	background-repeat: no-repeat;
-	background-position: top right;
+	/* background-size: 30%,  contain; */
+	/* background-repeat: no-repeat; */
+	/* background-position: top right; */
 }
 
 .blog-area .thumb {
@@ -873,7 +873,7 @@ button.btn:hover::after {
 .post-tags.share {
 	display: flex;
 	margin-top: 50px;
-	float: left;
+	/* float: left; */
 	width: 100%;
 }
 
@@ -945,7 +945,7 @@ button.btn:hover::after {
 .post-pagi-area {
 	margin-top: 50px;
 	display: flex;
-	float: left;
+	/* float: left; */
 	width: 100%;
 }
 
@@ -1044,7 +1044,7 @@ button.btn:hover::after {
   /* Comments */
 
 .blog-comments {
-	float: left;
+	/* float: left; */
 	width: 100%;
 	margin-top: 50px;
 	padding-top: 45px;

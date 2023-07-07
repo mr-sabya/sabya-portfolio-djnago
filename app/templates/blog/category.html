@@ -1,0 +1,35 @@
+<!-- Start category  ============================================= -->
+<div class="blog-style-one-area blog-area default-padding-top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+                <div class="site-heading text-center">
+                    <h4 class="sub-title">Learn</h4>
+                    {% if category %}
+                    <h2 class="title">{{ category.title }}</h2>
+                    {% else %}
+                    <h2 class="title">My blogs</h2>
+                    {% endif %}
+                    <div class="devider"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="d-flex">
+
+            {% for category in categories %}
+            <!-- Single item -->
+            <div class="card bg-white border-0">
+                <h4 class="m-0 p-2">
+                    <a href="{% url 'blog.category' category.slug %}" class="ps-3 pe-3">{{ category.title }}</a>
+            </div>
+            <!-- End Single item -->
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+</div>
+<!-- End category -->

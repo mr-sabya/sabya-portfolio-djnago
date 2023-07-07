@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% include 'blog/category.html' %}
+
+<!-- Start Blog 
+    ============================================= -->
+<div class="blog-style-one-area blog-area default-padding">
+
+    <div class="container">
+        <div class="row">
+
+            {% for blog in blogs %}
+            <!-- Single item -->
+            <div class="blog-style-one mb-30 col-lg-4 col-md-6">
+                <div class="item">
+                    <div class="thumb">
+                        <a href="{% url 'blog.show'  blog.slug %}"><img src="{{ HTTP_HOST }}/media/{{ blog.image }}"
+                                alt="Thumb"></a>
+                    </div>
+                    <div class="info">
+                        <h4>
+                            <a href="{% url 'blog.show'  blog.slug %}">{{ blog.title }}</a>
+                        </h4>
+                        <div class="meta">
+                            <ul>
+                                <li>
+                                    <i class="fas fa-calendar-alt"></i> {{ blog.created_at }}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Single item -->
+            {% endfor %}
+
+
+        </div>
+    </div>
+
+</div>
+<!-- End Blog -->
+
+{% endblock %}
